@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.*
@@ -12,9 +13,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -23,6 +28,8 @@ import com.example.jettpackcompose.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ImageScreen(navController: NavHostController) {
+    val uriHandler = LocalUriHandler.current
+
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -49,13 +56,13 @@ fun ImageScreen(navController: NavHostController) {
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
-                .background(Color.White) // ✅ nền trắng toàn màn
+                .background(Color.White)
                 .padding(horizontal = 20.dp, vertical = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             // 🖼 Hình 1
             Image(
-                painter = painterResource(id = R.drawable.uth_image), // 🔁 đổi hình ở đây
+                painter = painterResource(id = R.drawable.uth_image),
                 contentDescription = "Top Image",
                 modifier = Modifier
                     .fillMaxWidth()
@@ -65,21 +72,27 @@ fun ImageScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // 📄 Đoạn mô tả ở giữa
-            Text(
-                text = "https://giaothongvantaitphcm.edu.vn/wp-content/uploads/2025/01/Logo-GTVT.png",
-                fontSize = 16.sp,
-                lineHeight = 22.sp,
-                color = Color.DarkGray,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.padding(horizontal = 12.dp)
+            // 🔗 Clickable Link
+            val link = "https://giaothongvantaitphcm.edu.vn/wp-content/uploads/2025/01/Logo-GTVT.png"
+            ClickableText(
+                text = AnnotatedString(link),
+                style = TextStyle(
+                    color = Color(0xFF1976D2), // màu xanh hyperlink
+                    fontSize = 16.sp,
+                    textAlign = TextAlign.Center,
+                    textDecoration = TextDecoration.Underline // gạch chân giống link thật
+                ),
+                modifier = Modifier.padding(horizontal = 12.dp),
+                onClick = {
+                    uriHandler.openUri(link)
+                }
             )
 
             Spacer(modifier = Modifier.height(24.dp))
 
             // 🖼 Hình 2
             Image(
-                painter = painterResource(id = R.drawable.uth_bg_05), // 🔁 đổi hình ở đây
+                painter = painterResource(id = R.drawable.uth_bg_05),
                 contentDescription = "Bottom Image",
                 modifier = Modifier
                     .fillMaxWidth()
