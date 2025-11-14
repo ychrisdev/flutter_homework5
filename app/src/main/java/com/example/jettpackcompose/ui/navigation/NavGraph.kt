@@ -21,7 +21,7 @@ object Routes {
 fun NavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = Routes.HOME // ✅ mở trang chính khi khởi động
+        startDestination = Routes.HOME
     ) {
         composable(Routes.HOME) { HomeScreen(navController) }
         composable(Routes.UILIST) { UIComponentListScreen(navController) }

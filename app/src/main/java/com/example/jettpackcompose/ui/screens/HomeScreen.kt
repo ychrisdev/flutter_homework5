@@ -26,7 +26,6 @@ fun HomeScreen(navController: NavHostController) {
             .fillMaxSize()
             .padding(horizontal = 24.dp, vertical = 16.dp)
     ) {
-        // 🧑‍💻 Góc phải: tên người dùng
         Column(
             modifier = Modifier
                 .align(Alignment.TopEnd),
@@ -43,14 +42,12 @@ fun HomeScreen(navController: NavHostController) {
             )
         }
 
-        // 🌟 Logo + text ở giữa
         Column(
             modifier = Modifier
                 .align(Alignment.Center)
                 .padding(horizontal = 16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Logo (không viền)
             Image(
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = "Jetpack Compose Logo",
@@ -59,7 +56,6 @@ fun HomeScreen(navController: NavHostController) {
                     .padding(bottom = 24.dp)
             )
 
-            // Tiêu đề
             Text(
                 text = "Jetpack Compose",
                 fontSize = 18.sp,
@@ -69,7 +65,6 @@ fun HomeScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Mô tả
             Text(
                 text = "Jetpack Compose is a modern UI toolkit for building native Android applications using a declarative programming approach.",
                 fontSize = 14.sp,
@@ -78,7 +73,6 @@ fun HomeScreen(navController: NavHostController) {
             )
         }
 
-        // 🟦 Nút “I’m ready” dưới đáy
         Button(
             onClick = { navController.navigate(Routes.UILIST) },
             modifier = Modifier
@@ -86,7 +80,7 @@ fun HomeScreen(navController: NavHostController) {
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 24.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF1E88E5) // xanh dương
+                containerColor = Color(0xFF1E88E5)
             ),
             shape = RoundedCornerShape(30.dp)
         ) {

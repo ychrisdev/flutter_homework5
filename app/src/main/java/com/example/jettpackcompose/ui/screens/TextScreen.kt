@@ -44,14 +44,12 @@ fun TextScreen(navController: NavHostController) {
             )
         }
     ) { innerPadding ->
-        // ✅ Nền trắng toàn trang
         Box(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
                 .background(Color.White)
         ) {
-            // Căn chữ gần giữa trang (theo mẫu)
             Column(
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
@@ -59,7 +57,6 @@ fun TextScreen(navController: NavHostController) {
                     .padding(top = 120.dp),
                 horizontalAlignment = Alignment.Start
             ) {
-                // Chuỗi styled
                 val styled = buildAnnotatedString {
                     withStyle(SpanStyle(fontSize = 22.sp)) { append("The ") }
                     withStyle(SpanStyle(textDecoration = TextDecoration.LineThrough)) { append("quick ") }
@@ -84,7 +81,6 @@ fun TextScreen(navController: NavHostController) {
                     withStyle(SpanStyle(fontSize = 22.sp)) { append("dog.") }
                 }
 
-                // Hiển thị text
                 Text(
                     text = styled,
                     lineHeight = 44.sp,

@@ -40,7 +40,6 @@ fun TextFieldScreen(navController: NavHostController) {
             )
         }
     ) { innerPadding ->
-        // ✅ Căn giữa toàn bộ nội dung cả dọc và ngang
         Column(
             modifier = Modifier
                 .padding(innerPadding)
@@ -52,13 +51,12 @@ fun TextFieldScreen(navController: NavHostController) {
         ) {
             var text by remember { mutableStateOf("") }
 
-            // 📝 TextField có bo góc và border màu xanh
             OutlinedTextField(
                 value = text,
                 onValueChange = { text = it },
                 label = { Text("Nhập nội dung tại đây") },
                 singleLine = true,
-                shape = RoundedCornerShape(12.dp), // ✅ Bo góc
+                shape = RoundedCornerShape(12.dp),
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = Color(0xFF1976D2),
                     unfocusedBorderColor = Color.Gray,
@@ -71,7 +69,6 @@ fun TextFieldScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // 🔴 Text hiển thị bên dưới, màu đỏ khi chưa nhập
             Text(
                 text = if (text.isEmpty()) "Tự động cập nhật dữ liệu theo textfield" else text,
                 fontSize = 20.sp,

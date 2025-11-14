@@ -46,7 +46,6 @@ fun ColumnScreen(navController: NavHostController) {
                 .background(Color.White),
             contentAlignment = Alignment.Center
         ) {
-            // ✅ Khung xám chứa 3 khối
             Column(
                 modifier = Modifier
                     .fillMaxWidth(0.9f)

@@ -33,7 +33,7 @@ fun UIComponentListScreen(navController: NavController) {
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
-                .background(Color.White) // ✅ nền trắng chính
+                .background(Color.White)
                 .padding(16.dp)
         ) {
             Section("Display")
@@ -62,7 +62,7 @@ fun UIComponentListScreen(navController: NavController) {
             ComponentItem(
                 title = "Tự tìm hiểu",
                 description = "Tìm ra tất cả các thành phần UI cơ bản",
-                backgroundColor = Color(0xFFFFCDD2) // đỏ nhạt cho nổi bật
+                backgroundColor = Color(0xFFFFCDD2)
             )
         }
     }
@@ -82,7 +82,7 @@ private fun Section(title: String) {
 private fun ComponentItem(
     title: String,
     description: String,
-    backgroundColor: Color = Color(0xFFE3F2FD), // ✅ xanh nhạt cho các nút
+    backgroundColor: Color = Color(0xFFE3F2FD),
     onClick: (() -> Unit)? = null
 ) {
     Surface(

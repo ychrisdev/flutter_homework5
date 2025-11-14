@@ -59,9 +59,9 @@ fun RowScreen(navController: NavHostController) {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     val boxModifier = Modifier
-                        .weight(1f) // ✅ mỗi khối chiếm đều không gian
-                        .aspectRatio(1.6f) // ✅ tỉ lệ cố định để đều nhau (rộng hơn cao)
-                        .padding(horizontal = 6.dp) // khoảng cách nhỏ giữa các hình
+                        .weight(1f)
+                        .aspectRatio(1.6f)
+                        .padding(horizontal = 6.dp)
                         .clip(RoundedCornerShape(10.dp))
 
                     Box(

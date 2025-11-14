@@ -60,7 +60,6 @@ fun ImageScreen(navController: NavHostController) {
                 .padding(horizontal = 20.dp, vertical = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // 🖼 Hình 1
             Image(
                 painter = painterResource(id = R.drawable.uth_image),
                 contentDescription = "Top Image",
@@ -72,15 +71,14 @@ fun ImageScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // 🔗 Clickable Link
             val link = "https://giaothongvantaitphcm.edu.vn/wp-content/uploads/2025/01/Logo-GTVT.png"
             ClickableText(
                 text = AnnotatedString(link),
                 style = TextStyle(
-                    color = Color(0xFF1976D2), // màu xanh hyperlink
+                    color = Color(0xFF1976D2),
                     fontSize = 16.sp,
                     textAlign = TextAlign.Center,
-                    textDecoration = TextDecoration.Underline // gạch chân giống link thật
+                    textDecoration = TextDecoration.Underline
                 ),
                 modifier = Modifier.padding(horizontal = 12.dp),
                 onClick = {
@@ -90,7 +88,6 @@ fun ImageScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // 🖼 Hình 2
             Image(
                 painter = painterResource(id = R.drawable.uth_bg_05),
                 contentDescription = "Bottom Image",
